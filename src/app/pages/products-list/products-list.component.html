@@ -1,2 +1,16 @@
 <!-- <app-card (click)=""></app-card> -->
-<h1>For card</h1>
+<mat-card class="example-card">
+	<mat-card-header>
+		<div mat-card-avatar class="example-header-image"></div>
+		<mat-card-title>{{ title }}</mat-card-title>
+		<mat-card-subtitle>Dog Breed</mat-card-subtitle>
+	</mat-card-header>
+	<img mat-card-image src="{{ img }}" alt="Photo of a Shiba Inu" />
+	<mat-card-content>
+		<p>{{ text }}</p>
+	</mat-card-content>
+	<mat-card-actions>
+		<button mat-button (click)="onClickLike($event)">LIKE</button>
+		<button mat-button (click)="onClickShare($event)">SHARE</button>
+	</mat-card-actions>
+</mat-card>
