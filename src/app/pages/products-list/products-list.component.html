@@ -1,2 +1,6 @@
-<app-card (click)="onClick()"></app-card>
+<app-card
+	(click)="onClick()"
+	[product]="productInfo"
+	(byeClick)="onByeClick()"
+></app-card>
 <h1>For card</h1>
