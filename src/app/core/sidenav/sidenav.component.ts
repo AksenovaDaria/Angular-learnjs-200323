@@ -53,7 +53,7 @@ export class SidenavComponent {
 	toggleSidenavOpened() {
 		// console.log(this.matButtons);
 		// console.log(this.matButtonElementRef);
-		console.log(this.matList);
+		// console.log(this.matList);
 		this.drawerComponent.toggle();
 	}
 
