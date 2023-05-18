@@ -15,18 +15,45 @@
 			{{index}} -->
 
 	<!-- Для применения пагинации. chank - массив отображаемых элементов -->
-	<!-- <ng-container *appPagination="let chank of productsFromContext; chankSize: 4"> -->
-	<app-card
-		*ngFor="
+	<ng-container
+		class="container"
+		*appPagination="
+			let chank of productsFromContext;
+			let next = next;
+			let back = back;
+			let pages = pages;
+			let pageArr = pageArr;
+			let changePage = changePage;
+			let index = index
+		"
+	>
+		<app-card
+			*ngFor="let product of chank"
+			class="card"
+			[product]="product"
+		></app-card>
+
+		<div class="buttons">
+			<button class="back" (click)="back(); $event.stopPropagation()">Back</button>
+			<button
+				*ngFor="let arr of pageArr"
+				(click)="changePage(arr)"
+				[ngStyle]="{backgroundColor: arr == index + 1 ? 'red' : 'none'}"
+			>
+				{{ arr }}
+			</button>
+			<button class="next" (click)="next(); $event.stopPropagation()">Next</button>
+		</div>
+	</ng-container>
+
+	<!-- *ngFor="
 			let product of ngIfInputValue as productsFromNgForDirective;
 			trackBy: trackById;
 			let index = index
 		"
 		class="card"
 		[product]="product"
-		(buy)="onBuy($event)"
-	></app-card>
-	<!-- </ng-container> -->
+		(buy)="onBuy($event)" -->
 
 	<!-- </ng-template> -->
 	<!-- <app-card

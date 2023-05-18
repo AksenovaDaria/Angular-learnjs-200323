@@ -9,7 +9,7 @@ import {
 	ViewContainerRef,
 } from '@angular/core';
 import {ICarouselContext} from './carousel-context.interface';
-import {BehaviorSubject, Subject, Subscription, filter, map, takeUntil} from 'rxjs';
+import {BehaviorSubject, Subject, filter, map, takeUntil} from 'rxjs';
 
 @Directive({
 	selector: '[appCarousel]',
