@@ -9,7 +9,7 @@ import {
 	ViewContainerRef,
 } from '@angular/core';
 import {ICarouselContext} from './carousel-context.interface';
-import {BehaviorSubject, Subject, Subscription, filter, map, takeUntil} from 'rxjs';
+import {BehaviorSubject, Subject, filter, map, takeUntil} from 'rxjs';
 
 @Directive({
 	selector: '[appCarousel]',
@@ -61,7 +61,7 @@ export class CarouselDirective<T> implements OnInit, OnChanges, OnDestroy {
 				takeUntil(this.destroy$),
 			)
 			.subscribe(context => {
-				console.log('insert', context);
+				// console.log('insert', context);
 				this.viewContainerRef.clear();
 				this.viewContainerRef.createEmbeddedView(this.templateRef, context);
 			});
