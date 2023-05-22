@@ -25,8 +25,8 @@ export class ProductsListComponent implements OnInit {
 
 	name = 'Телевизор';
 
-	propertyNameToFilter: keyof IProduct = 'feedbacksCount';
-	searchProperty = '2';
+	propertyNameToFilter: keyof IProduct = 'subCategory';
+	searchProperty = 'Tel';
 
 	constructor(
 		// @Inject(ChangeDetectorRef) private readonly changeDetectorRef: ChangeDetectorRef,

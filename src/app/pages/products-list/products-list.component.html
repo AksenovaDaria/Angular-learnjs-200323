@@ -3,7 +3,7 @@
 </div>
 <div *ngIf="products$ | async as products; else loader" class="scroll-container">
 	<!-- easy -->
-	<ng-container
+	<!-- <ng-container
 		*appPagination="
 			let productsGroup of products | productsFilter : name;
 			chankSize: 6;
@@ -13,11 +13,12 @@
 			let back = back;
 			let selectIndex = selectIndex
 		"
-	>
-		<!-- hard -->
-		<!-- <ng-container
+	> -->
+	<!-- hard -->
+	<ng-container
 		*appPagination="
-			let productsGroup of (products | filterByPropety : propertyNameToFilter : searchProperty);
+			let productsGroup of products
+				| filterByProperty : propertyNameToFilter : searchProperty;
 			chankSize: 6;
 			let pageIndexes = pageIndexes;
 			let activeIndex = index;
@@ -25,7 +26,7 @@
 			let back = back;
 			let selectIndex = selectIndex
 		"
-	> -->
+	>
 		<!-- <ng-container
 		*appPagination="
 			let productsGroup of products;
