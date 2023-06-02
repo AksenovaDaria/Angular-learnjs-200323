@@ -65,3 +65,11 @@
 .ng-untouched {
 	border:  3px solid black;
 } */
+
+.touched {
+	border: none;
+}
+
+.untouched {
+	border: 2px solid red;
+}

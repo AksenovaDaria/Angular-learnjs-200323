@@ -32,6 +32,15 @@
 {{(searchedProductNameErrors$ | async) | json}}
 {{searchControl.valid}} -->
 
+<app-slider
+	[formControl]="valueFormControl"
+	[class.touched]="valueFormControl.touched"
+	[class.untouched]="!valueFormControl.touched"
+></app-slider>
+{{ valueFormControl.value }}
+{{ valueFormControll$ | async }}
+{{ valueFormControl.touched }}
+
 <mat-form-field class="example-full-width">
 	<mat-label>Search</mat-label>
 	<input #searchInput="ngModel" matInput ngModel appIsStringAsync [minlength]="3" />
