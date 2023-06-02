@@ -24,6 +24,11 @@ export class ProductsListComponent {
 
 	// counter = 0;
 
+	readonly valueFormControl = new FormControl(0);
+	readonly valueFormControll$ = this.valueFormControl.valueChanges.pipe(
+		startWith(this.valueFormControl.value),
+	);
+
 	// readonly counterFormControl = new FormControl(0);
 	// readonly counterFormControlValue$ = this.counterFormControl.valueChanges.pipe(
 	// 	startWith(this.counterFormControl.value),
@@ -55,6 +60,22 @@ export class ProductsListComponent {
 		// 	this.counter = 300;
 		// 	this.changeDetectorRef.markForCheck();
 		// }, 1000);
+
+		setTimeout(() => {
+			this.valueFormControl.setValue(20);
+
+			this.changeDetectorRef.markForCheck();
+		}, 1000);
+		setTimeout(() => {
+			this.valueFormControl.setValue(50);
+
+			this.changeDetectorRef.markForCheck();
+		}, 4000);
+		setTimeout(() => {
+			// this.valueFormControl.disable();
+
+			this.changeDetectorRef.markForCheck();
+		}, 9000);
 	}
 
 	trackById(_index: number, item: IProduct): IProduct['_id'] {
